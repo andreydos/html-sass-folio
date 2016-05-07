@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
-    imageminPngquant = require('imagemin-pngquant'),
     reload = browserSync.reload;
 
 var path = {
@@ -67,7 +66,6 @@ gulp.task('styles:build', function() {
 
 gulp.task('image:build', function () {
     gulp.src(path.src.img)       
-        .pipe(imageminPngquant({quality: '65-80', speed: 4})())
         .pipe(gulp.dest(path.build.img))
         .pipe(reload({stream: true}));
 });

@@ -221,7 +221,6 @@
 .portfolio__footer {	
 	margin-top: 100px;
 	padding-top: 100px;
-	height: 300px;
 	background: url('../img/portfolio-photo.png') no-repeat 50% 50%;
 	background-size: cover;
 	letter-spacing: .3px;
@@ -238,32 +237,46 @@
 		position: relative;
 }
 
-.quote::before {
-	content: ',,';
+.open-q-element {	
 	position: absolute;	
 	width: 26px; 
   height:26px;
-	top: 73px;
-	left: 6.5%;	
+	top: 10px;
+	left: 6%;	
+  color: white;
 	font-family: $mainFont;
 	font-size: 6.75em;
+  line-height: 0;
 	transform: rotate(180deg);
 }
 
-.quote::after {
-	content: ',,';
+.close-q-element {
 	position: absolute;
 	width: 26px;
   height:26px;
-	top: 150px;
+	bottom: -30px;
 	right: 8%;	
 	font-family: $mainFont;
 	font-size: 6.25em;
+  line-height: 0;
 	transform: scale(1, -1);
 }
 
+@media only screen and (max-width : 1600px) {  
+      .open-q-element {        
+        left: 0;
+      }
+      
+} 
+@media only screen and (max-width : 1220px) {  
+      .close-q-element {      	
+      	right: 0;
+      }
+} 
+
 .portfolio__footer--quote-author {
 	margin-top: 18px;
+  margin-bottom: 35px;
 	padding-right: 13%;
 	text-align: right;
 	font-family: $mainFont;
@@ -271,6 +284,3 @@
 }
 
 
-@media only screen and (min-width : 768px) {
-
-}
